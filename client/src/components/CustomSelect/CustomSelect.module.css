@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  margin: 10vw auto 0;
+  justify-content: space-around;
+  width: 25vw;
+}
+
+.left_part,
+.right_part {
+  margin-bottom: 0;
+  border: 1px solid lightgray;
+  padding: 0.5vw;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 0.25rem;
+}
+
+.left_part.active,
+.right_part.active {
+  border-color: orange;
+}
