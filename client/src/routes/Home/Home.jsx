@@ -57,7 +57,7 @@ export const Home = () => {
     changeData();
   }, [currentBrightness]);
 
-  //TODO:  check pattern strategy, builder, visitor
+  //TODO:  check pattern strategy, builder, visitor, adapter
 
   useEffect(() => {
     if (!isColorMode) {

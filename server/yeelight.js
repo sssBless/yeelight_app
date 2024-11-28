@@ -19,16 +19,12 @@ export function sendCommand(method, params) {
   socket.write(command);
 }
 
-// Функция для получения данных о лампочке
 export function getBulbData() {
   return new Promise((resolve, reject) => {
-    // Отправляем команду на лампочку для получения всех свойств
     sendCommand('get_prop', ['power', 'bright', 'ct', 'rgb', 'name']);
 
-    // Обрабатываем ответы от лампочки Yeelight
     socket.on('data', (data) => {
       try {
-        // Парсим ответ от устройства Yeelight
         const bulbData = JSON.parse(data);
         resolve(bulbData);
       } catch (error) {
@@ -36,7 +32,6 @@ export function getBulbData() {
       }
     });
 
-    // Обрабатываем ошибки сокета
     socket.on('error', (error) => {
       reject(error);
     });
